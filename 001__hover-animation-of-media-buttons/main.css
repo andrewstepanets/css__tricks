@@ -1,6 +1,4 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -52,13 +50,13 @@ body {
   overflow: hidden;
 }
 
-.container i {
+.container a i {
   font-size: 36px;
   -webkit-transition: .3s ease;
   transition: .3s ease;
 }
 
-.container:before {
+.container a:before {
   content: '';
   position: absolute;
   width: 120%;
@@ -68,5 +66,50 @@ body {
   top: 90%;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+.container a:hover i {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  color: #f1f1f1;
+}
+
+.container a:hover:before {
+  -webkit-animation-name: hover;
+          animation-name: hover;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  top: -10%;
+  left: -10%;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    top: -110%;
+    left: 90%;
+  }
+  50% {
+    top: 10%;
+    left: -30%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
+
+@keyframes hover {
+  0% {
+    top: -110%;
+    left: 90%;
+  }
+  50% {
+    top: 10%;
+    left: -30%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
