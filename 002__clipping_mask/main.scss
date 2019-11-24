@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    margin: 0;    
+}
+.wrap {
+    width: 100%;
+    height: 150vh;
+    background: url('mountains.jpg');
+    background-size: cover;
+    position: relative;
+
+    .wrap__mask {
+        mask: url('mountains.svg');
+        mask-size: cover;
+        width: 100%;
+        height: 100%;
+
+        .wrap__headline {
+            font-family: Arial;
+            font-size: 12rem;
+            color: white;
+            position: fixed;
+            top: 15vh;
+            width: 100%;
+            text-align: center;
+            text-shadow: 1px 1px 10px rgba(0,0,0,.1);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
+.content {
+    width: 100%;
+    height: 200vh;
+}
