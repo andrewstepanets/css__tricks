@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(32deg, #08AEEA, #2AF598);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+nav {
+    background: #fff;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+nav .logo {
+    width: 50px;
+    height: 50px;
+}
+nav .toggleMenu {
+    display: none;
+    border: 0;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    color: #2c405e;
+    cursor: pointer;
+}
+nav .toggleMenu:active, nav .toggleMenu:focus {
+    outline: none;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 15px;
+    overflow: hidden;
+}
+nav ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #2c405e;
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after {
+    content: '';
+    background: #2c405e;
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+nav ul li a:hover::after {
+    transform: translateY(-15px);
+    opacity: 1;
+}
+
+
+@media(max-width: 480px) {
+    nav .toggleMenu {
+        display: inline-block;
+    }
+    nav ul {
+        background: #fff;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 10%;
+        width: 80vw;
+        border: 1px solid #a5a5a5;
+        border-radius: 2px;
+        align-items: center;
+        transform: translateX(120%);
+        transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    }
+    
+    nav ul.open {
+        transform: translateX(0);
+    }
+    nav ul li:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
