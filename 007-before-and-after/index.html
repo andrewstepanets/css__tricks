@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Before and After using CSS and JS</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="img background-img"></div>
+      <div class="img foreground-img"></div>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        name="slider"
+        id="slider"
+      />
+      <div class="slider-button"></div>
+    </div>
+    <script>
+      const slider = document.querySelector('#slider');
+      const foregroundImage = document.querySelector('.foreground-img');
+      const sliderButton = document.querySelector('.slider-button');
+
+      function handleRangeUpdate(e) {
+        const sliderPos = e.target.value;
+        foregroundImage.style.width = `${sliderPos}%`;
+        sliderButton.style.left = `calc(${sliderPos}% - 18px)`;
+      }
+
+      slider.addEventListener('input', handleRangeUpdate, false);
+    </script>
+  </body>
+</html>
